@@ -47,3 +47,12 @@ for i, frase in column.items():
         palavras_lematizadas.append(palavra_lematizada)
     print(f"{i+1}: {palavras_lematizadas}\n")
 # ====================================================================================
+
+
+
+import spacy
+
+nlp = spacy.load("pt_core_news_sm")  # Modelo em português
+doc = nlp("Os gatos estão correndo")
+for token in doc:
+    print(token.text, token.lemma_)
